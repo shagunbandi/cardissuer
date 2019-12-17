@@ -39,8 +39,9 @@ public class SentimentController {
     @PostMapping("/network")
     public String network(@RequestBody Map<String,String> payload) {
         String status = payload.get("status");
-        if(status.equalsIgnoreCase("Accept"))
-        {
+        try{
+            if(status.equalsIgnoreCase("Accept"))
+            {
                  
                 String url = "http://35.223.188.12/api/payment/bank-2";
                 HttpHeaders headers = new HttpHeaders();
@@ -53,7 +54,12 @@ public class SentimentController {
                 ResponseEntity<String> response = restTemplate.postForEntity(url, request , String.class);
                
                 return "Response from issuing bank "+response.getBody();
+            } 
         }
+        catch(Exception) {
+            System.out.println("didn't work");
+        }
+        
         return "network declined";
     }
 }
