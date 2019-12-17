@@ -56,7 +56,7 @@ public class SentimentController {
                 return "Response from issuing bank "+response.getBody();
             } 
         }
-        catch(Exception) {
+        catch(Exception e) {
             System.out.println("didn't work");
         }
         
