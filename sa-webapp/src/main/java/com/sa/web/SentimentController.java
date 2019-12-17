@@ -53,6 +53,7 @@ public class SentimentController {
                     RestTemplate restTemplate=new RestTemplate();
                     try {
                     ResponseEntity<String> response = restTemplate.postForEntity(url, request , String.class);
+                    return "Response from issuing bank "+response.getBody();
                 }
                 catch(Exception e){
                     return e.getMessage();
@@ -63,7 +64,7 @@ public class SentimentController {
                 }
 
                
-                return "Response from issuing bank "+response.getBody();
+                
         }
         return "network declined";
     }
