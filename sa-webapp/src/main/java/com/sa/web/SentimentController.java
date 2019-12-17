@@ -51,14 +51,15 @@ public class SentimentController {
                     map.put("network","visa");
                     HttpEntity<Map<String, String>> request = new HttpEntity<>(map, headers);
                     RestTemplate restTemplate=new RestTemplate();
-                }
-                catch(Exception e){
-                    return "error in setting values";
-                }try {
+                    try {
                     ResponseEntity<String> response = restTemplate.postForEntity(url, request , String.class);
                 }
                 catch(Exception e){
                     return e.getMessage();
+                }
+                }
+                catch(Exception e){
+                    return "error in setting values";
                 }
 
                
