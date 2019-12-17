@@ -53,14 +53,14 @@ public class SentimentController {
                     RestTemplate restTemplate=new RestTemplate();
                 }
                 catch(Exception e){
-                    return "error in setting values"
+                    return "error in setting values";
                 }try {
                     ResponseEntity<String> response = restTemplate.postForEntity(url, request , String.class);
                 }
                 catch(Exception e){
                     return e.getMessage();
                 }
-                
+
                
                 return "Response from issuing bank "+response.getBody();
         }
