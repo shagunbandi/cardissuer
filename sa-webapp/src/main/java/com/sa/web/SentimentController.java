@@ -31,7 +31,7 @@ public class SentimentController {
         return "Hello World";
     }
 
-    private final Logger log = LoggerFactory.getLogger(PaymentResource.class);
+    private final Logger log = LoggerFactory.getLogger(SentimentController.class);
 
     /**
     * POST network
