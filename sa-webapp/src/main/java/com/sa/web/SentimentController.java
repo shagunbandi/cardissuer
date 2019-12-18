@@ -51,7 +51,7 @@ public class SentimentController {
             HttpEntity<Map<String, String>> request = new HttpEntity<>(map, headers);
             RestTemplate restTemplate=new RestTemplate();
             ResponseEntity<String> response = restTemplate.postForEntity(url, request , String.class);
-            return "Response from issuing bank: "+response.getBody();
+            return "Response from issuing bank: ( "+response.getBody() + " )";
                 
         }
         return "network declined";
