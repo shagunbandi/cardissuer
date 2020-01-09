@@ -10,7 +10,7 @@ spec:
   http:
   - match:
     - uri:
-        prefix: /
+        prefix: /api/payment/
     route:
     - destination:
         host: sa-web-app
